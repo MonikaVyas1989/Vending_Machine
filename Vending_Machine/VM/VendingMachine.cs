@@ -9,6 +9,7 @@ namespace Vending_Machine.VM
 {
     public class VendingMachine : IVending
     {
+
         private readonly int[] money = { 1,5,10,20,50,100,500,1000};
         
         public static int MoneyPool { get; set;}
