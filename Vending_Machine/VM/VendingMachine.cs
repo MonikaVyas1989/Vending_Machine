@@ -25,6 +25,7 @@ namespace Vending_Machine.VM
                
                 if (amount > 0)
                 {
+
                     MoneyPool = amount;
                 }
             }
