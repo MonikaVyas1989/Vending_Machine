@@ -8,7 +8,7 @@ namespace Vending_Machine.Product
     {
        
         public abstract string Examin { get; }
-        public abstract string Use { get; }
+        public abstract string Use { get; } 
 
         public abstract int Price { get; }
     }

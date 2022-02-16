@@ -9,7 +9,7 @@ namespace Vending_Machine.VM
 {
     public class VendingMachine : IVending
     {
-
+  
         private readonly int[] money = { 1,5,10,20,50,100,500,1000};
         
         public static int MoneyPool { get; set;}
@@ -22,10 +22,10 @@ namespace Vending_Machine.VM
             for (int i = money.Length - 1; i >= 0; i--)
             {
                 int amount = leftMoney / money[i];
-                leftMoney = leftMoney % money[i];
+               
                 if (amount > 0)
                 {
-                    MoneyPool = money[i];
+                    MoneyPool = amount;
                 }
             }
 
