@@ -41,7 +41,7 @@ namespace Vending_Machine.VM
            
             
           
-            if (MoneyPool >= drink.price || MoneyPool >= snack.price || MoneyPool >= play.price)
+            if (MoneyPool >= drink.Price || MoneyPool >= snack.Price || MoneyPool >= play.Price)
             {
 
                 Console.WriteLine("Which Product Do you want to buy:");
@@ -66,9 +66,9 @@ namespace Vending_Machine.VM
                             switch (choice)
                             {
                                 case 1:
-                                    if (MoneyPool >= drink.price)
+                                    if (MoneyPool >= drink.Price)
                                     {
-                                        MoneyPool -= drink.price;
+                                        MoneyPool -= drink.Price;
                                         //str.Add(drink.Use);
                                         Console.WriteLine(drink.Use);
                                         Console.WriteLine("Do you want other to buy Product:");
@@ -81,9 +81,9 @@ namespace Vending_Machine.VM
                                     }
                                     break;
                                 case 2:
-                                    if (MoneyPool >= snack.price)
+                                    if (MoneyPool >= snack.Price)
                                     {
-                                        MoneyPool -= snack.price;
+                                        MoneyPool -= snack.Price;
                                         Console.WriteLine(snack.Use);
                                         Console.WriteLine("Do you want other to buy Product:");
                                         continue;
@@ -95,9 +95,9 @@ namespace Vending_Machine.VM
                                     }
                                     break;
                                 case 3:
-                                    if (MoneyPool >= play.price)
+                                    if (MoneyPool >= play.Price)
                                     {
-                                        MoneyPool -= play.price;
+                                        MoneyPool -= play.Price;
                                         Console.WriteLine(play.Use);
                                         Console.WriteLine("Do you want other to buy Product:");
                                         continue;
@@ -144,9 +144,9 @@ namespace Vending_Machine.VM
             Drink drink = new Drink();
             Snack snack = new Snack();
             Play play = new Play();
-            
-            Productdetails[] productinfo = new Productdetails[] { drink, snack, play };
-            foreach(Productdetails  info in productinfo)
+
+            Product.Product[] productinfo = new Product.Product[] { drink, snack, play };
+            foreach(Product.Product  info in productinfo)
             {
                 Console.WriteLine ( info.Examin);
                 Console.WriteLine("\n");
