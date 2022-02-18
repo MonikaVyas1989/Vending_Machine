@@ -1,70 +1,71 @@
 ﻿using System;
 using Vending_Machine.VM;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-
-
 
 namespace Vending_Machine
 {
     public class VMachine
     {
-        static void Main(string[] args)
+        private static void ShowMenu()
         {
             Console.WriteLine(" ***********My Vendign Machine***********");
             Console.WriteLine(" <<<<Enter 1 to enter money in the machine");
             Console.WriteLine(" <<<<Enter 2 to show Product");
             Console.WriteLine(" <<<<Enter 3 to Buy a Product");
             Console.WriteLine(" <<<<Enter 4 to Quit");
+        }
+
+        private static void Main(string[] args)
+        {
 
 
+            var vm = new VendingMachine();
 
-            VendingMachine vm = new VendingMachine();
-            
 
-            bool running = true;
-            
+            var running = true;
+
             while (running)
-            {
                 try
                 {
-                    int p = int.Parse(Console.ReadLine());
+                    int p;
+                    do
+                    {
+                        Console.Clear();
+                        ShowMenu();
+                    } while (!int.TryParse(Console.ReadLine(), out p));
+
                     switch (p)
                     {
                         case 1:
                             vm.InsertMoney();
                             break;
                         case 2:
+                            Console.Clear();
+                            Console.Clear();
                             Console.WriteLine(vm.ShowAll());
+                            Console.ReadKey();
                             break;
                         case 3:
                             vm.Purchase();
+                            Console.ReadKey();
                             break;
                         case 4:
                             running = false;
                             break;
 
                         default:
-                            Console.WriteLine("Please Choose from a Menu");
+                            Console.Clear();
+                            ShowMenu();
                             break;
                     }
-            }
-            catch
-            {
-                Console.WriteLine("Please enter valid number value");
-            }
-
+                }
+                catch (Exception error)
+                {
+                    Console.Clear();
+                    Console.WriteLine(error.Message);
+                    Console.ReadKey();
+                    Console.Clear();
+                    ShowMenu();
+                }
         }
-
-
-
-
-
-    }
-
-
-        
     }
 }
